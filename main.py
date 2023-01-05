@@ -11,6 +11,7 @@ FPS = 60
 pause = 1
 state = True
 pygame.init()
+pygame.display.set_caption('Tetris')
 sc = pygame.display.set_mode(RES)
 game_sc = pygame.Surface(Game_res)
 clock = pygame.time.Clock()
@@ -97,6 +98,8 @@ while True:
             elif event.key == pygame.K_SPACE:
                 pause += 1
                 state = pause % 2 != 0
+            elif event.key == pygame.K_q:
+                exit(0)
     if state:
         figure_old = deepcopy(figure)
         for i in range(4):

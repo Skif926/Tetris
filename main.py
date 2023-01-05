@@ -44,6 +44,8 @@ title_tetris = main_font.render('Tetris', True, pygame.Color('Pink'))
 title_score = font.render('score:', True, pygame.Color('Green'))
 title_record = font.render('record:', True, pygame.Color('Yellow'))
 
+
+
 figure = deepcopy(choice(figures))
 next_figure = deepcopy(choice(figures))
 color = get_color()

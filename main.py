@@ -26,7 +26,7 @@ figurespos = [[(-1, -1), (-2, -1), (0, -1), (1, -1)],
               [(0, 0), (0, -1), (0, 1), (-1, 0)]]
 figures = [[pygame.Rect(x + Width // 2, y + 1, 1, 1) for x, y in figpos] for figpos in figurespos]
 figure_rect = pygame.Rect(0, 0, Title - 2, Title - 2)
-field = [[0 for i in range(Width)] for j in range(Height)]
+field = [[0 for _ in range(Width)] for _ in range(Height)]
 anim_count = 0
 anim_speed = 60
 anim_limit = 2000
@@ -94,10 +94,7 @@ while True:
                 rotate = True
             elif event.key == pygame.K_SPACE:
                 pause += 1
-                if pause % 2 == 0:
-                    state = False
-                else:
-                    state = True
+                state = pause % 2 != 0
     if state:
         figure_old = deepcopy(figure)
         for i in range(4):
